@@ -35,5 +35,8 @@ public class OutputView {
         if(strike ==0 && ball==0){
             System.out.println("낫싱");
         }
+        if(strike>0 && ball>0){
+            System.out.printf(ball+"볼"+strike+"스트라이크\n");
+        }
     }
 }
