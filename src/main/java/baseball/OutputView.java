@@ -20,9 +20,9 @@ public class OutputView {
         HashMap<String,Integer> result = getResult(answer, user);
         printHint(result.get("strike"),result.get("ball"));
         if(result.get("strike").equals(3)){
-            return true;
+            return false;
         }
-        return false;
+        return true;
     }
 
     public static void printHint(int strike, int ball){
