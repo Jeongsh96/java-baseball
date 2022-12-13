@@ -4,6 +4,7 @@ import camp.nextstep.edu.missionutils.Console;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class InputView {
 
@@ -61,4 +62,27 @@ public class InputView {
         }
         return userNumber;
     }
+
+    public static int retry(){
+        System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
+
+        String input;
+        while(true){
+            try{
+                input = Console.readLine();
+                retryValidity(input);
+                break;
+            }catch(IllegalArgumentException e){
+                System.out.println(e.getMessage());
+            }
+        }
+        return Integer.parseInt(input);
+    }
+    public static void retryValidity(String input){
+        String pattern = "^[1-2]$";
+        if(Pattern.matches(pattern,input)){
+            throw new IllegalArgumentException("[ERROR] 1 또는 2 중 하나를 입력해주세요");
+        }
+    }
+
 }
