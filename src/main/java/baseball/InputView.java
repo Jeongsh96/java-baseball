@@ -13,9 +13,12 @@ public class InputView {
         List<Integer> userNumbers = new ArrayList<>();
         System.out.print("숫자를 입력해주세요: ");
         String input = Console.readLine();
+
         int inputNumber = Integer.parseInt(input);
+
         return inputNumber;
     }
+
     public static List<Integer> connectedNumbersDivider(int inputNumber) {
         //LinkedHashMap<Integer, Integer> usersNumbers = new LinkedHashMap<Integer, Integer>();
         List<Integer> userNumbers = new ArrayList<>();
@@ -44,15 +47,18 @@ public class InputView {
             throw new IllegalArgumentException("[ERROR] 중복된 숫자가 존재합니다.");
         }
     }
-    public static void checkUserInputValidity(){
-        while(true){
-            try{
-                List<Integer> userNumber = new ArrayList<>();
+
+    public static List<Integer> checkUserInputValidity() {
+        List<Integer> userNumber = new ArrayList<>();
+        while (true) {
+            try {
                 userNumber = connectedNumbersDivider(getNumbers());
                 inputNumbersValidity(userNumber);
-            }catch(IllegalArgumentException e){
+                break;
+            } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
         }
+        return userNumber;
     }
 }
