@@ -8,9 +8,6 @@ import java.util.List;
 
 public class BaseballGame {
 
-
-
-
     public static List<Integer> gameAnswer() {
         List<Integer> answer = new ArrayList<>();
         while (answer.size() < 3) {
