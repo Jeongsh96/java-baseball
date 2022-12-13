@@ -79,7 +79,7 @@ public class InputView {
         return Integer.parseInt(input);
     }
     public static void retryValidity(String input){
-        String pattern = "^[1-2]$";
+        String pattern = "^[1-2]\n$";
         if(Pattern.matches(pattern,input)){
             throw new IllegalArgumentException("[ERROR] 1 또는 2 중 하나를 입력해주세요");
         }
